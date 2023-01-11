@@ -22,5 +22,5 @@ class Types:
 
 
 
-        print(types_counter)
+        return types_counter
                 
