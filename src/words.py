@@ -11,16 +11,16 @@ class Types:
     def allTypes(self):
         types_counter = {}
 
-        for file_data in self.data:
+        for file_line in self.data:
             #line = sub('\n','',line).lower().replace(' ', '')
-            for lines in file_data:
-                lines = (sub('\n', '', lines).lower().replace(' ', ''))
-                
-                for letter in lines:
-                    if letter in types_counter:
-                        types_counter[letter] += 1
-                        continue
-                    types_counter[letter] = 1
+            file_line = sub('\n', '', file_line).lower().replace(' ', '')
+            for letter in file_line:
+                if letter in types_counter:
+                    types_counter[letter] += 1
+                    continue
+                types_counter[letter] = 1
+
+
+
         print(types_counter)
                 
-
