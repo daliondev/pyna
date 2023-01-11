@@ -21,8 +21,7 @@ class data:
         for file in self.files:
             # Entramos al directorio donde estan los archivos para poder leerlos
             with open(f'{self.filesDirectory}/{file}') as f:
-                self.dataContent.append(f.readlines())
+                self.dataContent = self.dataContent + ((f.readlines()))
                 f.close()
 
         return self.dataContent
-
