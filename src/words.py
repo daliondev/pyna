@@ -19,8 +19,9 @@ class Types:
                     types_counter[letter] += 1
                     continue
                 types_counter[letter] = 1
-
-
-
         return types_counter
                 
+
+
+    def onlyWords(self):
+        pass
