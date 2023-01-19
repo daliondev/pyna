@@ -13,7 +13,7 @@ class Types:
 
         for file_line in self.data:
             #line = sub('\n','',line).lower().replace(' ', '')
-            file_line = sub('\n', '', file_line).lower().replace(' ', '')
+            file_line = sub(r'[^a-zA-Z]', '', sub('\n', '', file_line).lower().replace(' ', ''))
             for letter in file_line:
                 if letter in types_counter:
                     types_counter[letter] += 1
@@ -24,4 +24,22 @@ class Types:
 
 
     def onlyWords(self):
-        pass
+        
+        words_counter = {}
+        data_lines = ''
+
+        for file_line in self.data:
+            clean_file_line = sub(r'[^a-zA-Z]', ' ', sub('\n', '', file_line))
+            data_lines += clean_file_line
+
+        for word in data_lines.split(' '):
+            if word in words_counter:
+                words_counter[word] += 1
+                continue
+            words_counter[word] = 1
+
+        return words_counter
+
+
+
+
