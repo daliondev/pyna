@@ -7,6 +7,12 @@ class main:
         self.count = []
 
         self.words = Types()
+        
+        
+        # Se puede usar la siguiente linea para contar las palabras dadas
+        #self.words_count = self.words.onlyWords()
+        
+        
         self.words_count = self.words.allTypes()
 
         for key, value in self.words_count.items():
